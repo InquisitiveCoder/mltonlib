@@ -13,34 +13,54 @@ set -x
 
 prefix=/usr/include
 GL=$prefix/GL
-SDL=$prefix/SDL
+SDL=$prefix/SDL2
+linkage=shared
 
 headers="$SDL/SDL.h
-$SDL/SDL_active.h
+$SDL/SDL_assert.h
+$SDL/SDL_atomic.h
 $SDL/SDL_audio.h
-$SDL/SDL_cdrom.h
+$SDL/SDL_bits.h
+$SDL/SDL_blendmode.h
+$SDL/SDL_clipboard.h
 $SDL/SDL_cpuinfo.h
 $SDL/SDL_endian.h
 $SDL/SDL_error.h
 $SDL/SDL_events.h
-$SDL/SDL_getenv.h
+$SDL/SDL_filesystem.h
+$SDL/SDL_gamecontroller.h
+$SDL/SDL_gesture.h
+$SDL/SDL_haptic.h
+$SDL/SDL_hints.h
 $SDL/SDL_joystick.h
 $SDL/SDL_keyboard.h
-$SDL/SDL_keysym.h
+$SDL/SDL_keycode.h
 $SDL/SDL_loadso.h
+$SDL/SDL_log.h
 $SDL/SDL_main.h
 $SDL/SDL_mouse.h
 $SDL/SDL_mutex.h
 $SDL/SDL_name.h
+$SDL/SDL_opengles2.h
+$SDL/SDL_opengles.h
 $GL/gl.h
 $SDL/SDL_opengl.h
 $SDL/SDL_platform.h
+$SDL/SDL_power.h
 $SDL/SDL_quit.h
+$SDL/SDL_rect.h
+$SDL/SDL_render.h
+$SDL/SDL_revision.h
 $SDL/SDL_rwops.h
+$SDL/SDL_scancode.h
+$SDL/SDL_shape.h
 $SDL/SDL_stdinc.h
+$SDL/SDL_surface.h
+$SDL/SDL_system.h
 $SDL/SDL_syswm.h
 $SDL/SDL_thread.h
 $SDL/SDL_timer.h
+$SDL/SDL_touch.h
 $SDL/SDL_types.h
 $SDL/SDL_version.h
 $SDL/SDL_video.h
@@ -61,7 +81,7 @@ mkdir -p $outdir
 
 rm -rf $outdir/mlton
 mkdir -p $outdir/mlton
-mlnlffigen -linkage static                             \
+mlnlffigen -linkage $linkage                           \
            -dir $outdir/mlton                          \
            -cppopt "-include detail/config/$target.h"  \
            $headers
