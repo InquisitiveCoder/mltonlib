@@ -20,30 +20,18 @@ signature SDL = sig
       val TIMER : flags
       val AUDIO : flags
       val VIDEO : flags
-      val CDROM : flags
       val JOYSTICK : flags
-      val NOPARACHUTE : flags
-      val EVENTTHREAD : flags
+      val HAPTIC : flags
+      val GAMECONTROLLER : flags
+      val EVENTS : flags
       val EVERYTHING : flags
+      val NOPARACHUTE : flags
    end
    val init : Init.flags Effect.t
    val initSubSystem : Init.flags Effect.t
    val quitSubSystem : Init.flags Effect.t
    val wasInit : Init.flags UnOp.t
    val quit : Unit.t Effect.t
-
-   structure Prop : sig
-      include FLAGS
-      val SW : flags
-      val HW : flags
-      val ASYNCBLIT : flags
-      val ANYFORMAT : flags
-      val DOUBLEBUF : flags
-      val FULLSCREEN : flags
-      val OPENGL : flags
-      val RESIZABLE : flags
-      val NOFRAME : flags
-   end
 
    structure Pos : sig type 'e t = {x : 'e, y : 'e} end
    structure Dim : sig type 'e t = {w : 'e, h : 'e} end
@@ -77,32 +65,12 @@ signature SDL = sig
    structure Surface : sig
       type 'a t
       val getPixelFormat : 'any t -> Pixel.Format.t
-      val getProps : 'any t -> Prop.flags
       val getDim : 'any t -> Int.t Dim.t
       val free : {video : no} t Effect.t
-      val flip : 'dst t Effect.t
-      val update : 'dst t Effect.t
-      val updateRect : 'dst t -> Int.t Rect.t Effect.t
       val fill : 'dst t -> Pixel.t Effect.t
-      val fillRect : 'dst t -> Pixel.t -> Int.t Rect.t Effect.t
-      val blit : 'src t -> 'dst t Effect.t
-      val blitRect : 'src t -> Int.t Rect.t -> 'dst t -> Int.t Rect.t Effect.t
-      val convert : Pixel.Format.t -> Prop.flags -> 'any t -> {video : no} t
-      val convertToVideo : {alpha : Bool.t} -> 'any t -> {video : no} t
-      val getClipRect : 'any t -> Int.t Rect.t
-      val setClipRect : 'any t -> Int.t Rect.t Effect.t
    end
 
    structure Video : sig
-      val setMode : Pixel.Format.t -> Prop.flags -> Int.t Dim.t
-                    -> {video : yes} Surface.t
-      val getSurface : {video : yes} Surface.t Thunk.t
-      val getDriverName : String.t Thunk.t
-      val getPixelFormat : Pixel.Format.t Thunk.t
-      val getDim : Int.t Dim.t Thunk.t
-      val listModes : Pixel.Format.t -> Prop.flags
-                      -> Int.t Dim.t List.t Option.t
-      val setGamma : Real.t RGB.t Effect.t
    end
 
    structure Key : sig
@@ -116,14 +84,10 @@ signature SDL = sig
          val RCTRL : flags
          val LALT : flags
          val RALT : flags
-         val LMETA : flags
-         val RMETA : flags
          val NUM : flags
          val CAPS : flags
          val MODE : flags
       end
-      val setRepeat : {delay : Time.t, interval : Time.t} Option.t Effect.t
-      val isPressed : Sym.t UnPr.t
    end
 
    structure Mouse : sig
@@ -132,14 +96,12 @@ signature SDL = sig
          val LEFT : flags
          val MIDDLE : flags
          val RIGHT : flags
-         val WHEELDOWN : flags
-         val WHEELUP : flags
+         val X1 : flags
+         val X2 : flags
       end
       val getPos : Int.t Pos.t Thunk.t
-      val setPos : Int.t Pos.t Effect.t
       val getDelta : Int.t Pos.t Thunk.t
-      val getButtons : Button.flags Thunk.t
-      val showCursor : Bool.t Effect.t
+      (* val getButtons : Word8Flags.flags Thunk.t *)
    end
 
    structure Event : sig

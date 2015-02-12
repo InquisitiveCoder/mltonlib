@@ -78,112 +78,6 @@ signature SDL_KEY_SYM = sig
    val Y : t
    val Z : t
    val DELETE : t
-   val WORLD_0 : t
-   val WORLD_1 : t
-   val WORLD_2 : t
-   val WORLD_3 : t
-   val WORLD_4 : t
-   val WORLD_5 : t
-   val WORLD_6 : t
-   val WORLD_7 : t
-   val WORLD_8 : t
-   val WORLD_9 : t
-   val WORLD_10 : t
-   val WORLD_11 : t
-   val WORLD_12 : t
-   val WORLD_13 : t
-   val WORLD_14 : t
-   val WORLD_15 : t
-   val WORLD_16 : t
-   val WORLD_17 : t
-   val WORLD_18 : t
-   val WORLD_19 : t
-   val WORLD_20 : t
-   val WORLD_21 : t
-   val WORLD_22 : t
-   val WORLD_23 : t
-   val WORLD_24 : t
-   val WORLD_25 : t
-   val WORLD_26 : t
-   val WORLD_27 : t
-   val WORLD_28 : t
-   val WORLD_29 : t
-   val WORLD_30 : t
-   val WORLD_31 : t
-   val WORLD_32 : t
-   val WORLD_33 : t
-   val WORLD_34 : t
-   val WORLD_35 : t
-   val WORLD_36 : t
-   val WORLD_37 : t
-   val WORLD_38 : t
-   val WORLD_39 : t
-   val WORLD_40 : t
-   val WORLD_41 : t
-   val WORLD_42 : t
-   val WORLD_43 : t
-   val WORLD_44 : t
-   val WORLD_45 : t
-   val WORLD_46 : t
-   val WORLD_47 : t
-   val WORLD_48 : t
-   val WORLD_49 : t
-   val WORLD_50 : t
-   val WORLD_51 : t
-   val WORLD_52 : t
-   val WORLD_53 : t
-   val WORLD_54 : t
-   val WORLD_55 : t
-   val WORLD_56 : t
-   val WORLD_57 : t
-   val WORLD_58 : t
-   val WORLD_59 : t
-   val WORLD_60 : t
-   val WORLD_61 : t
-   val WORLD_62 : t
-   val WORLD_63 : t
-   val WORLD_64 : t
-   val WORLD_65 : t
-   val WORLD_66 : t
-   val WORLD_67 : t
-   val WORLD_68 : t
-   val WORLD_69 : t
-   val WORLD_70 : t
-   val WORLD_71 : t
-   val WORLD_72 : t
-   val WORLD_73 : t
-   val WORLD_74 : t
-   val WORLD_75 : t
-   val WORLD_76 : t
-   val WORLD_77 : t
-   val WORLD_78 : t
-   val WORLD_79 : t
-   val WORLD_80 : t
-   val WORLD_81 : t
-   val WORLD_82 : t
-   val WORLD_83 : t
-   val WORLD_84 : t
-   val WORLD_85 : t
-   val WORLD_86 : t
-   val WORLD_87 : t
-   val WORLD_88 : t
-   val WORLD_89 : t
-   val WORLD_90 : t
-   val WORLD_91 : t
-   val WORLD_92 : t
-   val WORLD_93 : t
-   val WORLD_94 : t
-   val WORLD_95 : t
-   val KP0 : t
-   val KP1 : t
-   val KP2 : t
-   val KP3 : t
-   val KP4 : t
-   val KP5 : t
-   val KP6 : t
-   val KP7 : t
-   val KP8 : t
-   val KP9 : t
    val KP_PERIOD : t
    val KP_DIVIDE : t
    val KP_MULTIPLY : t
@@ -215,27 +109,17 @@ signature SDL_KEY_SYM = sig
    val F13 : t
    val F14 : t
    val F15 : t
-   val NUMLOCK : t
    val CAPSLOCK : t
-   val SCROLLOCK : t
    val RSHIFT : t
    val LSHIFT : t
    val RCTRL : t
    val LCTRL : t
    val RALT : t
    val LALT : t
-   val RMETA : t
-   val LMETA : t
-   val LSUPER : t
-   val RSUPER : t
    val MODE : t
-   val COMPOSE : t
    val HELP : t
-   val PRINT : t
    val SYSREQ : t
-   val BREAK : t
    val MENU : t
    val POWER : t
-   val EURO : t
    val UNDO : t
 end
